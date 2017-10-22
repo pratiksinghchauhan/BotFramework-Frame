@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Bot </title>
+    </head>
+    <style>
+        iframe{
+           position: absolute;
+           right: 120px;
+           bottom: 120px;
+           display: none;
+           border-radius: 12px;
+        }  
+
+        .bot-logo {
+	       	height : 80px;
+	       	width : 80px;
+	       	bottom : 50px;
+	       	right : 50px;
+	       	cursor : pointer;
+            position: absolute;
+	    }
+
+        .close-logo{
+            height : 80px;
+	       	width : 80px;
+	       	bottom : 50px;
+	       	right : 50px;
+	       	cursor : pointer;
+            position: absolute;
+            display: none;
+        }
+
+    </style>
+
+    <body>
+       <img onclick="displayFrame()" class="bot-logo" src="robo.jpg" alt="robot image">
+       <img onclick="showFrame()" class="close-logo" src="close.png" alt="close image">
+       <iframe width='350px' height='500px' src="https://li1301-29.members.linode.com:3978/"></iframe> 
+    </body>
+</html>
+
+<script>
+    function displayFrame(){
+        console.log("displayframe called");
+        var chatbox=document.getElementsByTagName("iframe")[0]
+        var closelogo=document.getElementsByClassName('close-logo')[0]
+        var botlogo=document.getElementsByClassName('bot-logo')[0]
+        chatbox.style.display = 'block'
+        closelogo.style.display = 'block';
+        botlogo.style.display = 'none';
+        console.log("attribute set");
+    }
+
+    function showFrame(){
+        console.log("showframe called");
+        var chatbox=document.getElementsByTagName("iframe")[0]
+        var closelogo=document.getElementsByClassName('close-logo')[0]
+        var botlogo=document.getElementsByClassName('bot-logo')[0]
+        chatbox.style.display = 'none'
+        closelogo.style.display = 'none';
+        botlogo.style.display = 'block';
+        console.log("attribute set");
+    }
+</script>
+
+<!--
+<script>
+    window.onload=function () {
+        var div = document.createElement("div");
+        console.log("hello");
+        document.getElementsByTagName('body')[0].appendChild(div);
+        div.outerHTML = "<div id='botDiv' style='height: 38px; position: fixed; right:20px ; bottom: 0; z-index: 1000; background-color: #fff'><div id='botTitleBar' style='height: 38px; width: 400px; position:fixed; cursor: pointer;'></div><iframe width='400px' height='600px' src='https://d84f87fb.ngrok.io'></iframe></div>"; 
+
+        document.querySelector('body').addEventListener('click', function (e) {
+            e.target.matches = e.target.matches || e.target.msMatchesSelector;
+            if (e.target.matches('#botTitleBar')) { 
+                var botDiv = document.querySelector('#botDiv'); 
+                botDiv.style.height = botDiv.style.height == '600px' ? '38px' : '600px';
+            };
+        });
+    };
+
+</script>
+-->

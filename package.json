@@ -1,0 +1,14 @@
+{
+  "name": "botiframe",
+  "version": "1.0.0",
+  "description": "include bot in iframe",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "pratiksinghchauhan",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.2"
+  }
+}
